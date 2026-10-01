@@ -1,35 +1,32 @@
-### Transform Map Script Example
+# Import Data Using Transform Maps
 
-```javascript(function runTransformScript(source, map, log, target /*undefined onStart*/ ) {
+## Project Description
+This project demonstrates how to import employee data into ServiceNow using Import Sets and Transform Maps.
 
-    // Example 1: Ignore record based on source condition
-    if (source.u_status == 'Inactive') {
-        ignore = true;
-    }
+## Objective
+The main objective of this project is to import data from a source file and transform it into the required ServiceNow table.
 
-    // Example 2: Field value transformation / data formatting
-    if (source.u_email) {
-        target.email = source.u_email.toString().toLowerCase().trim();
-    }
+## Tools Used
+- ServiceNow
+- Import Sets
+- Transform Maps
 
-    // Example 3: Default value assignment
-    if (!source.u_category) {
-        target.category = 'inquiry';
-    }
+## Steps Performed
+1. Created an Import Set.
+2. Uploaded the employee data.
+3. Created a Transform Map.
+4. Mapped source fields to target fields.
+5. Transformed the data.
+6. Verified the imported records in ServiceNow.
 
-})(source, map, log, target);
-(function runTransformScript(source, map, log, target /*undefined onStart*/ ) {
+## Data Fields
+- Employee ID
+- Name
+- Department
+- Location
 
-    // 1. Inactive status irundha transform panna koodadhu
-    if (source.u_status == 'Inactive') {
-        ignore = true; 
-    }
+## Final Output
+Employee records were successfully imported into the ServiceNow table using Transform Maps.
 
-    // 2. Target field-ukku value map panradhu
-    if (source.u_email != '') {
-        target.email = source.u_email.toLowerCase();
-    }
-
-})(source, map, log, target);
-```# Importnt-data-using-Transform-Maps-spreadsheet-0
-Transform Maps are used in servicenow to import data from spreadsheets into the appropriate tables.  They helps map spreadsheet fields to servicenow fields, transform the data, and ensure that the information is imported accurately and efficiently.
+## Screenshots
+Screenshots of the Import Set, Transform Map, Field Mapping and Final Output are included in this repository.
